@@ -171,7 +171,7 @@ class User {
 			exit;
 		}
 
-		$query = 'SELECT * FROM Users WHERE lower(username) = lower(' . $adodb->qstr($this->name) . ') LIMIT 1';
+		$query = 'SELECT * FROM Users WHERE active = 1 AND lower(username) = lower(' . $adodb->qstr($this->name) . ') LIMIT 1';
 		$adodb->CacheFlush($query);
 
 		return 1;
